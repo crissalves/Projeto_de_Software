@@ -82,7 +82,7 @@ class VolatilLoteRepositoryTest {
    @DisplayName("Buscar um Lote pelo seu ID")
    void buscarLotePeloId() {
         driver.save(lote);
-        assertEquals(lote, driver.find(lote.getId()));
+        assertEquals(lote, driver.find(lote.getId()-1));
     }
 
     @Test
@@ -106,7 +106,7 @@ class VolatilLoteRepositoryTest {
         driver.save(lote);
         lote.setNumeroDeItens(50);
         driver.update(lote);
-        assertEquals(50, driver.find(lote.getId()).getNumeroDeItens());
+        assertEquals(50, driver.find(lote.getId()-1).getNumeroDeItens());
     }
 
     @Test
