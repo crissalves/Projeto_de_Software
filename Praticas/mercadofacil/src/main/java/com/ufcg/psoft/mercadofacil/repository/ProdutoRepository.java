@@ -1,6 +1,12 @@
 package com.ufcg.psoft.mercadofacil.repository;
 
-public interface ProdutoRepository<Produto, Long> {
-    Produto update(Produto produtoAlterado);
-    Produto find(Long id);
+import java.util.List;
+
+public interface ProdutoRepository<T, ID> {
+    T save(T produto);
+    T find(ID id);
+    List<T> findAll();
+    T update(T produto);
+    void delete(T produto);
+    void deleteAll();
 }
